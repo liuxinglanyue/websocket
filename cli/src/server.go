@@ -20,6 +20,12 @@ func echoHandler(ws *websocket.Conn) {
 		log.Fatal(err)
 	}
 	fmt.Printf("Send: %s\n", msg[:m])
+
+	m, err = ws.Write([]byte("test another"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Send 2: %s\n", msg[:m])
 }
 
 func main() {
