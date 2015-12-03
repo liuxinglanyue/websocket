@@ -1,8 +1,8 @@
 package main
 
 import (
-	"code.google.com/p/go.net/websocket"
 	"fmt"
+	"golang.org/x/net/websocket"
 	"log"
 )
 
@@ -11,6 +11,7 @@ var url = "ws://localhost:8080/echo"
 
 func main() {
 	ws, err := websocket.Dial(url, "", origin)
+	defer ws.Close()
 	if err != nil {
 		log.Fatal(err)
 	}

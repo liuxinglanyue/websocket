@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"chat"
+	"github.com/liuxinglanyue/websocket/websocket-chat/src/chat"
 )
 
 func main() {
